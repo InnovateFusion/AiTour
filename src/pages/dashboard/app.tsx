@@ -20,6 +20,7 @@ import {
   _appInstalled,
   _appRelated,
   _appInvoices,
+  _tours,
 } from '../../_mock/arrays';
 
 // components
@@ -40,6 +41,7 @@ import {
 // assets
 import { SeoIllustration } from '../../assets/illustrations';
 import { Block } from 'src/sections/_examples/Block';
+import { TravelTourList } from 'src/sections/_travel/tour/list';
 
 // ----------------------------------------------------------------------
 
@@ -62,7 +64,9 @@ export default function GeneralAppPage() {
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={9}></Grid>
+          <Grid item xs={12} md={9}>
+            <TravelTourList tours={_tours} loading={false} />
+          </Grid>
 
           <Grid item xs={12} md={3}>
             <StaticDatePicker<Date> orientation="portrait" openTo="day" value={new Date()} />
