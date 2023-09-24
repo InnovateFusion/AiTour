@@ -8,3 +8,4 @@ export { default as HomePricingPlans } from './HomePricingPlans';
 export { default as HomeAdvertisement } from './HomeAdvertisement';
 export { default as HomeCleanInterfaces } from './HomeCleanInterfaces';
 export { default as HomeHugePackElements } from './HomeHugePackElements';
+export { default as TravelLandingHero } from './TravelLandingHero';

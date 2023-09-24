@@ -3,6 +3,12 @@ import Head from 'next/head';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Container, Grid, Stack, Button } from '@mui/material';
+import {
+  DatePicker,
+  StaticDatePicker,
+  MobileDatePicker,
+  DesktopDatePicker,
+} from '@mui/x-date-pickers';
 // auth
 import { useAuthContext } from '../../auth/useAuthContext';
 // layouts
@@ -15,6 +21,7 @@ import {
   _appRelated,
   _appInvoices,
 } from '../../_mock/arrays';
+
 // components
 import { useSettingsContext } from '../../components/settings';
 // sections
@@ -32,6 +39,7 @@ import {
 } from '../../sections/@dashboard/general/app';
 // assets
 import { SeoIllustration } from '../../assets/illustrations';
+import { Block } from 'src/sections/_examples/Block';
 
 // ----------------------------------------------------------------------
 
@@ -54,12 +62,10 @@ export default function GeneralAppPage() {
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={8}>
-            
-          </Grid>
+          <Grid item xs={12} md={9}></Grid>
 
-          <Grid item xs={12} md={4}>
-
+          <Grid item xs={12} md={3}>
+            <StaticDatePicker<Date> orientation="portrait" openTo="day" value={new Date()} />
           </Grid>
         </Grid>
       </Container>

@@ -18,7 +18,9 @@ import {
   HomeAdvertisement,
   HomeCleanInterfaces,
   HomeHugePackElements,
+  TravelLandingHero,
 } from '../sections/home';
+import { _tours } from 'src/_mock/arrays';
 
 // ----------------------------------------------------------------------
 
@@ -56,12 +58,13 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title> The starting point for your next project | AiTour</title>
+        <title> Travel made easy with AI. | AiTour</title>
       </Head>
 
       {progress}
 
-      <HomeHero />
+      <TravelLandingHero tours={_tours.slice(0, 5)} />
+      {/* <HomeHero /> */}
 
       <Box
         sx={{
