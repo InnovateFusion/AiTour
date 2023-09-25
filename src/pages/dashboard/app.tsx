@@ -142,6 +142,15 @@ export default function GeneralAppPage() {
     });
  
   }
+  const handleAccomedatinClick = (tag  : string) => {
+    setBudget((prevTags) => {
+      return {
+        ...prevTags,
+        [tag]: !prevTags[tag],
+      };
+    });
+ 
+  }
 
   return (
     <>
@@ -191,7 +200,7 @@ export default function GeneralAppPage() {
                           budgetKeys.map((tag: string) => {
                             const isTagSelected = budget[tag];
                             const variant = isTagSelected ? 'filled' : 'outlined';
-                            return <Chip label = {`${tag}`} variant={variant} sx={{ marginRight: '6px' , marginBottom: '12px'}} onClick = {() => handleLocationClick(tag)}/>
+                            return <Chip label = {`${tag}`} variant={variant} sx={{ marginRight: '6px' , marginBottom: '12px'}} onClick = {() => handleAccomedatinClick(tag)}/>
                           })
                         }
 
@@ -207,7 +216,7 @@ export default function GeneralAppPage() {
                                <TextField id="outlined-basic" label="write your prompt" variant="outlined" />
                           </Box>
                           
-                          <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap' , width: '60ch'}}>
+                          <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap' , margin: '20' ,'& > :not(style)': { m: 1, width: '40ch' },}}>
                               <Button variant="soft" color="success" endIcon={<KeyboardArrowRight />}>
                                   Generate  preferences
                               </Button>
