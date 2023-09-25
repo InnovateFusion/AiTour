@@ -64,7 +64,6 @@ export default function HomePage() {
       {progress}
 
       <TravelLandingHero tours={_tours.slice(0, 5)} />
-      {/* <HomeHero /> */}
 
       <Box
         sx={{
