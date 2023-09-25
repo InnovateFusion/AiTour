@@ -47,8 +47,8 @@ export default function ChatPage() {
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
-            <Block title={"hi"}>
-                <Chat />
+            <Block title={""}>
+                <Chat key={"lucian.obrien"}/>
             </Block>
           </Grid>
 

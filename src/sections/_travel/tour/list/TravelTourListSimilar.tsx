@@ -4,8 +4,6 @@ import NextLink from 'next/link';
 import { Container, Stack, Button, Typography, Box } from '@mui/material';
 // hooks
 import useResponsive from 'src/hooks/useResponsive';
-// routes
-import { paths } from 'src/routes/paths';
 // types
 import { ITourProps } from 'src/types/tour';
 // components
@@ -25,7 +23,7 @@ export default function TravelTourListSimilar({ tours }: Props) {
   const viewAllBtn = (
     <Button
       component={NextLink}
-      href={paths.travel.tours}
+      href={"/paths.travel.tours"}
       color="inherit"
       endIcon={<Iconify icon="carbon:chevron-right" />}
     >

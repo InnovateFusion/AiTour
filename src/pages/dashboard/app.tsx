@@ -25,22 +25,9 @@ import {
 
 // components
 import { useSettingsContext } from '../../components/settings';
-// sections
-import {
-  AppWidget,
-  AppWelcome,
-  AppFeatured,
-  AppNewInvoice,
-  AppTopAuthors,
-  AppTopRelated,
-  AppAreaInstalled,
-  AppWidgetSummary,
-  AppCurrentDownload,
-  AppTopInstalledCountries,
-} from '../../sections/@dashboard/general/app';
+
 // assets
 import { SeoIllustration } from '../../assets/illustrations';
-import { Block } from 'src/sections/_examples/Block';
 import { TravelTourList } from 'src/sections/_travel/tour/list';
 
 // ----------------------------------------------------------------------
@@ -50,7 +37,7 @@ GeneralAppPage.getLayout = (page: React.ReactElement) => <DashboardLayout>{page}
 // ----------------------------------------------------------------------
 
 export default function GeneralAppPage() {
-  const { user } = useAuthContext();
+  useAuthContext();
 
   const theme = useTheme();
 

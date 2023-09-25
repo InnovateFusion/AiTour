@@ -43,6 +43,7 @@ const navConfig = [
     items: [
       { title: 'app', path: PATH_DASHBOARD.general.app, icon: ICONS.dashboard },
       { title: 'chat', path: PATH_DASHBOARD.chat.root, icon: ICONS.chat },
+      { title: 'visit', path: PATH_DASHBOARD.visit.root, icon: ICONS.booking },
     ],
   },
 ];

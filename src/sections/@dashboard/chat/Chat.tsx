@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
-// next
 import { useRouter } from 'next/router';
-// @mui
 import { Card, Container, Stack } from '@mui/material';
-// redux
 import { useDispatch, useSelector } from '../../../redux/store';
 import {
   getContacts,
@@ -15,14 +12,10 @@ import {
   markConversationAsRead,
   resetActiveConversation,
 } from '../../../redux/slices/chat';
-// routes
 import { PATH_DASHBOARD } from '../../../routes/paths';
-// components
 import { useSettingsContext } from '../../../components/settings';
 import CustomBreadcrumbs from '../../../components/custom-breadcrumbs';
-// @types
 import { IChatParticipant, IChatSendMessage } from '../../../@types/chat';
-// sections
 import ChatNav from './nav/ChatNav';
 import ChatRoom from './room/ChatRoom';
 import ChatMessageInput from './message/ChatMessageInput';
@@ -30,11 +23,12 @@ import ChatMessageList from './message/ChatMessageList';
 import ChatHeaderDetail from './header/ChatHeaderDetail';
 import ChatHeaderCompose from './header/ChatHeaderCompose';
 
-// ----------------------------------------------------------------------
-
+interface Keyinterface{
+  key: string
+}
 const CURRENT_USER_ID = '8864c717-587d-472a-929a-8e5f298024da-0';
 
-export default function Chat() {
+export default function Chat({key}: Keyinterface) {
   const { themeStretch } = useSettingsContext();
 
   const dispatch = useDispatch();
@@ -48,7 +42,7 @@ export default function Chat() {
   const { contacts, recipients, participants, activeConversationId, conversations } = useSelector(
     (state) => state.chat
   );
-
+  
   const selectedConversation = useSelector(() => {
     if (activeConversationId) {
       return conversations.byId[activeConversationId];
@@ -112,7 +106,7 @@ export default function Chat() {
 
   return (
     <Container maxWidth={themeStretch ? false : 'xl'}>
-      <CustomBreadcrumbs
+      {/* <CustomBreadcrumbs
         heading="Chat"
         links={[
           {
@@ -121,13 +115,13 @@ export default function Chat() {
           },
           { name: 'Chat' },
         ]}
-      />
+      /> */}
 
       <Card sx={{ height: '72vh', display: 'flex' }}>
-        <ChatNav conversations={conversations} activeConversationId={activeConversationId} />
+        {/* <ChatNav conversations={conversations} activeConversationId={activeConversationId} /> */}
 
         <Stack flexGrow={1}>
-          {detailView ? (
+          {/* {detailView ? (
             <ChatHeaderDetail participants={displayParticipants} />
           ) : (
             <ChatHeaderCompose
@@ -135,7 +129,7 @@ export default function Chat() {
               contacts={Object.values(contacts.byId)}
               onAddRecipients={handleAddRecipients}
             />
-          )}
+          )} */}
 
           <Stack
             direction="row"
@@ -157,9 +151,9 @@ export default function Chat() {
               />
             </Stack>
 
-            {detailView && (
+            {/* {detailView && (
               <ChatRoom conversation={selectedConversation} participants={displayParticipants} />
-            )}
+            )} */}
           </Stack>
         </Stack>
       </Card>

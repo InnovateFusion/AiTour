@@ -16,7 +16,7 @@ import { fShortenNumber } from 'src/utils/formatNumber';
 // types
 import { ITourProps } from 'src/types/tour';
 // _mock
-import { _socials } from 'src/_mock';
+// import { _socials } from 'src/_mock';
 // components
 import Iconify from 'src/components/iconify';
 
@@ -103,7 +103,7 @@ export default function TravelTourDetailsHeader({ tour }: Props) {
         </Stack>
       </Stack>
 
-      <Popover
+      {/* <Popover
         open={!!open}
         onClose={handleClose}
         anchorEl={open}
@@ -113,13 +113,13 @@ export default function TravelTourDetailsHeader({ tour }: Props) {
           sx: { width: 220, p: 1 },
         }}
       >
-        {_socials.map((social) => (
+        {_socials.map((social: any) => (
           <MenuItem key={social.value} onClick={handleClose} sx={{ typography: 'body2' }}>
             <Iconify icon={social.icon} width={24} sx={{ mr: 1, color: social.color }} />
             Share via {social.label}
           </MenuItem>
         ))}
-      </Popover>
+      </Popover> */}
     </>
   );
 }
