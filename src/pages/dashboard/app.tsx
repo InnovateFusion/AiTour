@@ -55,8 +55,7 @@ export default function GeneralAppPage() {
             <TravelTourList tours={_tours} loading={false} />
           </Grid>
 
-          <Grid item xs={12} md={3}>
-            <StaticDatePicker<Date> orientation="portrait" openTo="day" value={new Date()} />
+          <Grid item xs={12} md={3}>         
           </Grid>
         </Grid>
       </Container>
