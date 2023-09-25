@@ -34,9 +34,14 @@ import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
-import Add from '@mui/icons-material/Add';
+
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import ThumbUp from '@mui/icons-material/ThumbUp';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 // ----------------------------------------------------------------------
 
@@ -165,45 +170,80 @@ export default function GeneralAppPage() {
             <TravelTourList tours={_tours} loading={false} />
           </Grid>
               <Grid item xs={12} md={3} spacing={3}>
-                  <h4>Interests</h4>
-                  {
-                    tagKeys.map((tag: string) => {
-                      const isTagSelected = tags[tag];
-                      const variant = isTagSelected ? 'filled' : 'outlined';
-                      
-                      return <Chip label = {`${tag}`} variant={variant} sx={{ marginRight: '6px' , marginBottom: '12px'}} onClick = {() => handleClick(tag)}/>
-                    })
-                  }
-
-                      <h4>Specific Interests</h4>
-                        {
+                            <Accordion>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                      >
+                        <Typography>Interests</Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                          {
+                            tagKeys.map((tag: string) => {
+                              const isTagSelected = tags[tag];
+                                const variant = isTagSelected ? 'filled' : 'outlined';
+                          
+                                return <Chip label = {`${tag}`} variant={variant} sx={{ marginRight: '6px' , marginBottom: '12px'}} onClick = {() => handleClick(tag)}/>
+                              })
+                            }
+                      </AccordionDetails>
+                    </Accordion>
+                    <Accordion>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                      >
+                        <Typography>Specific Interests</Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                      {
                           interestKeys.map((tag: string) => {
                             const isTagSelected = interests[tag];
                             const variant = isTagSelected ? 'filled' : 'outlined';
                             return <Chip label = {`${tag}`} variant={variant} sx={{ marginRight: '6px' , marginBottom: '12px'}} onClick = {() => handleInterstClick(tag)}/>
                           })
                         }
-
-
-                      <h4>preferred Location</h4>
-                        {
+                      </AccordionDetails>
+                    </Accordion>
+                    <Accordion>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                      >
+                        <Typography>preferred Location</Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                      {
                           locationKeys.map((tag: string) => {
                             const isTagSelected = location[tag];
                             const variant = isTagSelected ? 'filled' : 'outlined';
                             return <Chip label = {`${tag}`} variant={variant} sx={{ marginRight: '6px' , marginBottom: '12px'}} onClick = {() => handleLocationClick(tag)}/>
                           })
                         }
-
-
-                        <h4>Accomodation preference</h4>
-                        {
+                      </AccordionDetails>
+                    </Accordion>
+                    <Accordion>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                      >
+                        <Typography>Accomodation preference</Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                      {
                           budgetKeys.map((tag: string) => {
                             const isTagSelected = budget[tag];
                             const variant = isTagSelected ? 'filled' : 'outlined';
                             return <Chip label = {`${tag}`} variant={variant} sx={{ marginRight: '6px' , marginBottom: '12px'}} onClick = {() => handleAccomedatinClick(tag)}/>
                           })
-                        }
-
+                      }
+                      </AccordionDetails>
+                    </Accordion>
+                   
                         <h4>anything else?</h4>
                         <Box
                             component="form"
