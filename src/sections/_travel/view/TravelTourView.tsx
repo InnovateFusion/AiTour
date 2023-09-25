@@ -58,7 +58,6 @@ export default function TravelTourView() {
         <TravelTourDetailsGallery images={_mockTour.gallery} />
 
         <Grid container columnSpacing={8} rowSpacing={5} direction="row-reverse">
-
           <Grid xs={12} md={12} lg={12}>
             <TravelTourDetailsHeader tour={_mockTour} />
 

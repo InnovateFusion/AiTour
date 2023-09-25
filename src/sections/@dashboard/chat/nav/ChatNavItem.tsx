@@ -119,11 +119,13 @@ export default function ChatNavItem({ conversation, openNav, isSelected, onSelec
 // ----------------------------------------------------------------------
 
 const getDetails = (conversation: IChatConversation, currentUserId: string) => {
-  const otherParticipants = conversation.participants.filter(
+  const otherParticipants = conversation.participants && conversation.participants.filter(
     (participant) => participant.id !== currentUserId
   );
 
-  const displayNames = otherParticipants.map((participant) => participant.name).join(', ');
+  const displayNames = otherParticipants && otherParticipants
+    .map((participant) => participant.name)
+    .join(', ');
 
   let displayText = '';
 

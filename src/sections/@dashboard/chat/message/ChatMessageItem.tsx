@@ -17,7 +17,7 @@ type Props = {
 };
 
 export default function ChatMessageItem({ message, conversation, onOpenLightbox }: Props) {
-  const sender = conversation.participants.find(
+  const sender = conversation.participants && conversation.participants.find(
     (participant) => participant.id === message.senderId
   );
 

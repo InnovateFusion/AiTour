@@ -69,6 +69,8 @@ export default function Chat({key}: Keyinterface) {
   useEffect(() => {
     const getDetails = async () => {
       dispatch(getParticipants(`${conversationKey}`));
+      console.log(conversationKey)
+      console.log(key)
       try {
         await dispatch(getConversation(`${conversationKey}`));
       } catch (error) {
@@ -79,6 +81,7 @@ export default function Chat({key}: Keyinterface) {
 
     if (conversationKey) {
       getDetails();
+      console.log(selectedConversation);
     } else if (activeConversationId) {
       dispatch(resetActiveConversation());
     }
@@ -92,9 +95,6 @@ export default function Chat({key}: Keyinterface) {
     }
   }, [dispatch, activeConversationId]);
 
-  const handleAddRecipients = (selectedRecipients: IChatParticipant[]) => {
-    dispatch(addRecipients(selectedRecipients));
-  };
 
   const handleSendMessage = async (value: IChatSendMessage) => {
     try {
@@ -106,31 +106,8 @@ export default function Chat({key}: Keyinterface) {
 
   return (
     <Container maxWidth={themeStretch ? false : 'xl'}>
-      {/* <CustomBreadcrumbs
-        heading="Chat"
-        links={[
-          {
-            name: 'Dashboard',
-            href: PATH_DASHBOARD.root,
-          },
-          { name: 'Chat' },
-        ]}
-      /> */}
-
       <Card sx={{ height: '72vh', display: 'flex' }}>
-        {/* <ChatNav conversations={conversations} activeConversationId={activeConversationId} /> */}
-
         <Stack flexGrow={1}>
-          {/* {detailView ? (
-            <ChatHeaderDetail participants={displayParticipants} />
-          ) : (
-            <ChatHeaderCompose
-              recipients={recipients}
-              contacts={Object.values(contacts.byId)}
-              onAddRecipients={handleAddRecipients}
-            />
-          )} */}
-
           <Stack
             direction="row"
             flexGrow={1}
@@ -150,10 +127,6 @@ export default function Chat({key}: Keyinterface) {
                 }
               />
             </Stack>
-
-            {/* {detailView && (
-              <ChatRoom conversation={selectedConversation} participants={displayParticipants} />
-            )} */}
           </Stack>
         </Stack>
       </Card>

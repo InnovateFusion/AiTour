@@ -57,13 +57,6 @@ export default function ChatMessageList({ conversation }: Props) {
           />
         ))}
       </Scrollbar>
-
-      <Lightbox
-        index={selectedImage}
-        slides={imagesLightbox}
-        open={selectedImage >= 0}
-        close={handleCloseLightbox}
-      />
     </>
   );
 }

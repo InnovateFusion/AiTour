@@ -3,23 +3,12 @@ import Head from 'next/head';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Container, Grid, Stack, Button } from '@mui/material';
-import {
-  DatePicker,
-  StaticDatePicker,
-  MobileDatePicker,
-  DesktopDatePicker,
-} from '@mui/x-date-pickers';
 // auth
 import { useAuthContext } from '../../auth/useAuthContext';
 // layouts
 import DashboardLayout from '../../layouts/dashboard';
 // _mock_
 import {
-  _appFeatured,
-  _appAuthors,
-  _appInstalled,
-  _appRelated,
-  _appInvoices,
   _tours,
 } from '../../_mock/arrays';
 
@@ -55,7 +44,7 @@ export default function GeneralAppPage() {
             <TravelTourList tours={_tours} loading={false} />
           </Grid>
 
-          <Grid item xs={12} md={3}>         
+          <Grid item xs={12} md={3}>
           </Grid>
         </Grid>
       </Container>
