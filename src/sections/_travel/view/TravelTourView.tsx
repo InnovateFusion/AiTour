@@ -21,7 +21,6 @@ import {
   TravelTourDetailsHeader,
   TravelTourDetailsGallery,
   TravelTourDetailsSummary,
-  TravelTourDetailsReserveForm,
 } from '../tour/details';
 import { TravelTourListSimilar } from '../tour/list';
 
@@ -59,11 +58,8 @@ export default function TravelTourView() {
         <TravelTourDetailsGallery images={_mockTour.gallery} />
 
         <Grid container columnSpacing={8} rowSpacing={5} direction="row-reverse">
-          <Grid xs={12} md={5} lg={4}>
-            <TravelTourDetailsReserveForm tour={_mockTour} />
-          </Grid>
 
-          <Grid xs={12} md={7} lg={8}>
+          <Grid xs={12} md={12} lg={12}>
             <TravelTourDetailsHeader tour={_mockTour} />
 
             <Divider sx={{ borderStyle: 'dashed', my: 5 }} />
