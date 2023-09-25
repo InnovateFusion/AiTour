@@ -5,7 +5,6 @@ import { Container } from '@mui/material';
 import { _tours } from 'src/_mock/arrays';
 //
 import { TravelTourList } from '../tour/list';
-import TravelFilters from '../tour/filters';
 
 // ----------------------------------------------------------------------
 
@@ -23,12 +22,6 @@ export default function TravelToursView() {
   return (
     <>
       <Container>
-        {/* <TravelFilters
-          sx={{
-            mt: 5,
-            mb: { xs: 5, md: 10 },
-          }}
-        /> */}
 
         <TravelTourList tours={_tours} loading={loading} />
       </Container>

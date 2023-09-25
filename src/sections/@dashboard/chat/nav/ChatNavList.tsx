@@ -45,7 +45,7 @@ export default function ChatNavList({
     if (conversation.type === 'GROUP') {
       conversationKey = conversation.id;
     } else {
-      const otherParticipant = conversation.participants.find(
+      const otherParticipant = conversation.participants && conversation.participants.find(
         (participant) => participant.id !== CURRENT_USER_ID
       );
 

@@ -18,7 +18,7 @@ export default function ChatPage() {
         <title> Chat | Minimal UI</title>
       </Head>
 
-      <Chat />
+      <Chat key="lucian.obrien" />
     </>
   );
 }
