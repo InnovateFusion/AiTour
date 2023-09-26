@@ -73,7 +73,8 @@ export default function HomePage() {
         }}
       >
         <HomeMinimal />
-        <HomeDarkMode />
+        {/* <HomeDarkMode /> */}
+        <HomeAdvertisement/>
         <HomeCleanInterfaces />
         <HomeLookingFor />
         {/* Here*/}

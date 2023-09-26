@@ -39,7 +39,7 @@ export default function HomeDarkMode() {
         <m.div variants={varFade().inUp}>
           <Stack spacing={2} direction="row" alignItems="center" display="inline-flex">
             <Typography variant="h2" sx={{ my: 3, color: 'common.white' }}>
-              Dark mode
+            Are You a Hotel Owner or Car Rental Business?
             </Typography>
 
             <IconButton color={themeMode === 'dark' ? 'warning' : 'default'} onClick={onToggleMode}>
@@ -52,14 +52,15 @@ export default function HomeDarkMode() {
 
         <m.div variants={varFade().inUp}>
           <Typography sx={{ color: 'grey.500' }}>
-            A dark theme that feels easier on the eyes.
+          At Tour AI, we understand the importance of local expertise and hospitality. If you own a hotel or car 
+          rental service, we invite you to become a part of our platform and showcase your business to travelers from around the world.
           </Typography>
         </m.div>
 
         <m.div variants={varFade().inUp}>
           <Image
             alt="darkmode"
-            src="/assets/images/home/darkmode.jpg"
+            src="/assets/images/home/darkmode.jp"
             sx={{
               borderRadius: 2,
               my: { xs: 5, md: 10 },

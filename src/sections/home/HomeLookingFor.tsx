@@ -95,7 +95,7 @@ function Description() {
 function Content() {
   return (
     <Box component={m.div} variants={varFade().inUp}>
-      <Image disabledEffect alt="rocket" src="/assets/images/home/zone_landing.png" />
+      <Image disabledEffect alt="rocket" src="/assets/images/home/explore 1.png" />
     </Box>
   );
 }

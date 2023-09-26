@@ -55,8 +55,8 @@ function Description() {
         variants={varFade().inDown}
         sx={{ color: 'common.white', mb: 5, typography: 'h2' }}
       >
-        Get started with
-        <br /> minimal kit today
+        Are You a Hotel Owner or 
+        <br />Car Rental Business?
       </Box>
 
       <Stack
@@ -77,23 +77,12 @@ function Description() {
               bgcolor: 'common.white',
             }}
           >
-            Purchase Now
+            Register now
           </Button>
         </m.div>
 
         <m.div variants={varFade().inRight}>
-          <Button
-            color="inherit"
-            size="large"
-            variant="outlined"
-            target="_blank"
-            rel="noopener"
-            href={PATH_FREE_VERSION}
-            endIcon={<Iconify icon="eva:external-link-fill" width={16} sx={{ mr: 0.5 }} />}
-            sx={{ color: 'common.white', '&:hover': { borderColor: 'currentColor' } }}
-          >
-            Get Free Version
-          </Button>
+            
         </m.div>
       </Stack>
     </Box>
