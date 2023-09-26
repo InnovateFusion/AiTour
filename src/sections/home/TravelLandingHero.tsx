@@ -116,13 +116,13 @@ export default function TravelLandingHero({ tours }: Props) {
             right: { xs: 20, lg: '6%', xl: '10%' },
           }}
         >
-          {/* {!!tours.length && (
+          {!!tours.length && (
             <Carousel {...carouselThumbnailSettings} asNavFor={carouselContent} ref={carouselRef2}>
               {tours.map((tour, index) => (
                 <ThumbnailItem key={tour.id} tour={tour} isSelected={selected === index} />
               ))}
             </Carousel>
-          )} */}
+          )}
         </Stack>
       )}
     </Box>
@@ -135,8 +135,36 @@ type CarouselItemProps = {
   tour: ITourProps;
 };
 
+const homefact = [
+  {
+    slug: 'Oromia Tourism Week',
+    location: 'Oromia',
+    heroImg: '/assets/images/travel/travel_post_hero.jpg',
+    ratings: '',
+    price: '',
+    duration: '',
+    continent:'',
+  },
+  {
+    slug: 'Oromia Tourism Week',
+    location: 'Oromia',
+    heroImg: '/assets/images/travel/travel_post_hero.jpg',
+    ratings: '',
+    price: '',
+    duration: '',
+  },
+  {
+    slug: 'Oromia Tourism Week',
+    location: 'Oromia',
+    heroImg: '/assets/images/travel/travel_post_hero.jpg',
+    ratings: '',
+    price: '',
+    duration: '',
+  },
+];
+
 function CarouselItem({ tour }: CarouselItemProps) {
-  const { slug, location, heroImg, ratings, price, duration } = tour;
+  const { slug, location, heroImg, ratings, price, duration } = homefact[0];
 
   return (
     <Box
@@ -166,31 +194,6 @@ function CarouselItem({ tour }: CarouselItemProps) {
           {slug}
         </Typography>
 
-        <Stack
-          alignItems="center"
-          spacing={{ xs: 2.5, md: 5 }}
-          direction={{ xs: 'column', md: 'row' }}
-          sx={{ my: 5 }}
-        >
-          <Stack direction="row" alignItems="center" sx={{ typography: 'subtitle2' }}>
-            <Iconify icon="carbon:time" width={24} sx={{ mr: 1, color: 'primary.main' }} />
-            {duration}
-          </Stack>
-
-          <Stack direction="row" alignItems="center" sx={{ typography: 'subtitle2' }}>
-            <Iconify icon="carbon:star" width={24} sx={{ mr: 1, color: 'primary.main' }} />
-            {`${ratings} reviews`}
-          </Stack>
-
-          <Stack direction="row" alignItems="center" sx={{ typography: 'subtitle2' }}>
-            <Iconify icon="carbon:currency" width={24} sx={{ mr: 1, color: 'primary.main' }} />
-            {`Starting at ${fCurrency(price)}`}
-          </Stack>
-        </Stack>
-
-        <Button variant="contained" size="large">
-          Book Now
-        </Button>
       </Stack>
 
       {/* Background */}
@@ -228,7 +231,7 @@ type ThumbnailItemProps = {
 function ThumbnailItem({ tour, isSelected }: ThumbnailItemProps) {
   const theme = useTheme();
 
-  const { continent, heroImg, location } = tour;
+  const { continent, heroImg, location } = homefact[0];
 
   return (
     <Stack
