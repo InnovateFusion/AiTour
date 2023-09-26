@@ -282,7 +282,7 @@ export default function GeneralAppPage() {
                 '& > :not(style)': { m: 1, width: '40ch' },
               }}
             >
-              <Button variant="soft" color="success" endIcon={<KeyboardArrowRight />}>
+              <Button variant="soft" color="primary" endIcon={<KeyboardArrowRight />}>
                 Generate preferences
               </Button>
             </Box>
