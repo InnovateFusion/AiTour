@@ -16,7 +16,7 @@ const CARDS = [
   },
   {
     icon: ' /assets/icons/home/ic_design.svg',
-    title: 'UI & UX Design',
+    title: 'Promotion',
     description:
       'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
   },
@@ -58,13 +58,13 @@ export default function HomeMinimal() {
         >
           <m.div variants={varFade().inUp}>
             <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-              Minimal UI
+              TourAI
             </Typography>
           </m.div>
 
           <m.div variants={varFade().inDown}>
             <Typography variant="h2">
-              What minimal <br /> helps you?
+              What TourAI  <br /> helps you?
             </Typography>
           </m.div>
         </Stack>

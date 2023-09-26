@@ -15,6 +15,7 @@ import { useSettingsContext } from 'src/components/settings';
 BlankPage.getLayout = (page: React.ReactElement) => <DashboardLayout>{page}</DashboardLayout>;
 
 // ----------------------------------------------------------------------
+
 export default function BlankPage() {
   const { themeStretch } = useSettingsContext();
 

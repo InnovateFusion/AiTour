@@ -72,6 +72,10 @@ export default function HomePage() {
           bgcolor: 'background.default',
         }}
       >
+        <HomeMinimal />
+        <HomeDarkMode />
+        <HomeCleanInterfaces />
+        <HomeLookingFor />
         {/* Here*/}
       </Box>
     </>

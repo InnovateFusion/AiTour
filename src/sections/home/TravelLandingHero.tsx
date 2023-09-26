@@ -116,13 +116,13 @@ export default function TravelLandingHero({ tours }: Props) {
             right: { xs: 20, lg: '6%', xl: '10%' },
           }}
         >
-          {!!tours.length && (
+          {/* {!!tours.length && (
             <Carousel {...carouselThumbnailSettings} asNavFor={carouselContent} ref={carouselRef2}>
               {tours.map((tour, index) => (
                 <ThumbnailItem key={tour.id} tour={tour} isSelected={selected === index} />
               ))}
             </Carousel>
-          )}
+          )} */}
         </Stack>
       )}
     </Box>

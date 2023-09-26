@@ -17,7 +17,7 @@ export type ITourProps = {
   priceSale: number;
   gallery: string[];
   favorited: boolean;
-  description: string;
+  description: string[] | string;
   languages: string[];
   highlights: string[];
   tourGuide: IAuthorProps;
@@ -32,8 +32,20 @@ export type ITourProps = {
   includes: {
     label: string;
     enabled: boolean;
+    name?: string;
+    description?: string;
   }[];
 };
+
+export type IHotelProps = {
+  id: string;
+  slug: string;
+  heroImg: string;
+  ratings: number;
+  reviews: number;
+  coverImg: string;
+  location: string;
+}
 
 export type ITourCheckoutProps = {
   billingAddress: {

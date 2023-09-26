@@ -7,6 +7,7 @@ import { ITourProps } from 'src/types/tour';
 // components
 import Iconify, { IconifyProps } from 'src/components/iconify';
 
+
 // ----------------------------------------------------------------------
 
 type Props = {
@@ -30,7 +31,7 @@ export default function TravelTourDetailsSummary({ tour }: Props) {
   return (
     <Stack spacing={5}>
       {/* -- Tour Overview -- */}
-      <div>
+      {/* <div>
         <Typography variant="h5" sx={{ mb: 3 }}>
           Tour Overview
         </Typography>
@@ -60,9 +61,9 @@ export default function TravelTourDetailsSummary({ tour }: Props) {
           <OverviewItem icon="carbon:time" label="Durations" text={duration} />
           <OverviewItem icon="carbon:translate" label="Languages" text={languages.join(', ')} />
         </Box>
-      </div>
+      </div> */}
 
-      <Divider sx={{ borderStyle: 'dashed', my: 5 }} />
+      {/* <Divider sx={{ borderStyle: 'dashed', my: 5 }} /> */}
 
       {/* -- Tour Description -- */}
       <div>
@@ -119,19 +120,21 @@ export default function TravelTourDetailsSummary({ tour }: Props) {
                   ...(!option.enabled && { color: 'currentColor' }),
                 }}
               />
-              {option.label}
+              {option.name}
+              <br />
+              {option.description}
             </Stack>
           ))}
         </Box>
       </div>
 
       {/* -- Tour Program -- */}
-      <Stack spacing={2}>
+      {/* <Stack spacing={2}>
         <Typography variant="h5">Tour Program</Typography>
         {program.map((content) => (
           <HighlightItem key={content.label} label={content.label} text={content.text} />
         ))}
-      </Stack>
+      </Stack> */}
     </Stack>
   );
 }
