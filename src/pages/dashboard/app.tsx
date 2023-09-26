@@ -103,6 +103,7 @@ export default function GeneralAppPage() {
   });
 
   const [additionalInfo, setAdditionalInfo] = useState<String>('');
+  const [query, setQuery] = useState<Array<String>>([]);
 
   const [budget, setBudget] = useState<Tags>({
     'Budget-friendly': false,
@@ -147,6 +148,22 @@ export default function GeneralAppPage() {
         [tag]: !prevTags[tag],
       };
     });
+  };
+
+  const handleSubmit = () => {
+    tagKeys.map((key, index) => {
+      tags[key] ? setQuery([...query, key]) : null;
+    });
+    interestKeys.map((key, index) => {
+      tags[key] ? setQuery([...query, key]) : null;
+    });
+    locationKeys.map((key, index) => {
+      tags[key] ? setQuery([...query, key]) : null;
+    });
+    budgetKeys.map((key, index) => {
+      tags[key] ? setQuery([...query, key]) : null;
+    });
+    console.log(query);
   };
 
   return (
@@ -194,12 +211,13 @@ export default function GeneralAppPage() {
                 <Typography>Specific Interests</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                {interestKeys.map((tag: string) => {
+                {interestKeys.map((tag: string, index) => {
                   const isTagSelected = interests[tag];
                   const variant = isTagSelected ? 'filled' : 'outlined';
                   return (
                     <Chip
                       label={`${tag}`}
+                      key={index}
                       variant={variant}
                       sx={{ marginRight: '6px', marginBottom: '12px' }}
                       onClick={() => handleInterstClick(tag)}
