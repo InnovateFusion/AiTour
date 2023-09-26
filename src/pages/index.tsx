@@ -75,7 +75,7 @@ export default function HomePage() {
         <HomeMinimal />
         {/* <HomeDarkMode /> */}
         <HomeAdvertisement/>
-        <HomeCleanInterfaces />
+        {/* <HomeCleanInterfaces /> */}
         <HomeLookingFor />
         {/* Here*/}
       </Box>

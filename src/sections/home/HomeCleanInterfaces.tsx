@@ -58,7 +58,7 @@ function Description() {
                 : `4px 4px 16px ${alpha(theme.palette.grey[800], 0.48)}`,
           }}
         >
-          Beautiful, modern and clean user interfaces
+          Beautiful, modern and attractive culture
         </Typography>
       </m.div>
     </Stack>
