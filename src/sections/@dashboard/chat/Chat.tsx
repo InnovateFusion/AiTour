@@ -17,6 +17,7 @@ import { useSettingsContext } from '../../../components/settings';
 
 import ChatMessageInput from './message/ChatMessageInput';
 import ChatMessageList from './message/ChatMessageList';
+import { IChatSendMessage } from 'src/@types/chat';
 
 
 interface Keyinterface{
