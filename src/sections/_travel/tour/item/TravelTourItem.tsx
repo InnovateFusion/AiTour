@@ -17,13 +17,13 @@ import TextMaxLine from 'src/components/text-max-line';
 // ----------------------------------------------------------------------
 
 type Props = {
-  tour: ITourProps;
+  tour: any;
 };
 
 export default function TravelTourItem({ tour }: Props) {
-  const { slug, location, price, priceSale, favorited, duration, ratings, coverImg } = tour;
+  const { id, name,  highlight, images, description } = tour;
 
-  const [favorite, setFavorite] = useState(favorited);
+  const [favorite, setFavorite] = useState(false);
 
   const handleChangeFavorite = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFavorite(event.target.checked);
@@ -56,7 +56,7 @@ export default function TravelTourItem({ tour }: Props) {
             color: (theme) => (theme.palette.mode === 'light' ? 'common.white' : 'grey.800'),
           }}
         >
-          {location}
+          {}
         </Stack>
 
         <Checkbox
@@ -69,38 +69,18 @@ export default function TravelTourItem({ tour }: Props) {
         />
       </Stack>
 
-      <Image alt={slug} src={coverImg} ratio="1/1" />
+      <Image alt={name} src={images[0].url} ratio="1/1" />
 
       <Stack spacing={0.5} sx={{ p: 2.5 }}>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          {location}
+        <Typography variant="body2" sx={{ color: 'text.secondary', height:3 }}>
+          {/* {description} */}
         </Typography>
 
-        <Link component={NextLink} href={"/"} color="inherit">
+        <Link component={NextLink} href={`/dashboard/visit?id=${id}`} color="inherit" >
           <TextMaxLine variant="h6" persistent>
-            {slug}
+            {name}
           </TextMaxLine>
         </Link>
-      </Stack>
-
-      <Divider sx={{ borderStyle: 'dashed' }} />
-
-      <Stack direction="row" alignItems="center" sx={{ p: 2.5 }}>
-        <Stack
-          flexGrow={1}
-          direction="row"
-          alignItems="center"
-          sx={{ typography: 'body2', color: 'text.disabled' }}
-        >
-          <Iconify icon="carbon:time" width={16} sx={{ mr: 1 }} /> {duration}
-        </Stack>
-
-        <Stack spacing={0.5} direction="row" alignItems="center">
-          <Iconify icon="carbon:star-filled" sx={{ color: 'warning.main' }} />
-          <Box sx={{ typography: 'h6' }}>
-            {Number.isInteger(ratings) ? `${ratings}.0` : ratings}
-          </Box>
-        </Stack>
       </Stack>
     </Card>
   );

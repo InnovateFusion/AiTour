@@ -71,7 +71,7 @@ function Description() {
             variant="contained"
             target="_blank"
             rel="noopener"
-            href={PATH_MINIMAL_ON_STORE}
+            href={"/dashboard"}
             sx={{
               color: 'grey.800',
               bgcolor: 'common.white',

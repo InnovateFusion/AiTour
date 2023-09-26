@@ -104,27 +104,6 @@ export default function TravelLandingHero({ tours }: Props) {
         </Carousel>
       )}
 
-      {isMdUp && (
-        <Stack
-          spacing={2}
-          justifyContent="center"
-          sx={{
-            top: 0,
-            height: 1,
-            maxWidth: 220,
-            position: 'absolute',
-            right: { xs: 20, lg: '6%', xl: '10%' },
-          }}
-        >
-          {!!tours.length && (
-            <Carousel {...carouselThumbnailSettings} asNavFor={carouselContent} ref={carouselRef2}>
-              {tours.map((tour, index) => (
-                <ThumbnailItem key={tour.id} tour={tour} isSelected={selected === index} />
-              ))}
-            </Carousel>
-          )}
-        </Stack>
-      )}
     </Box>
   );
 }

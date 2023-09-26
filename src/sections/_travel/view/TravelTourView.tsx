@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 // @mui
 import { alpha } from '@mui/material/styles';
 import {
@@ -29,12 +29,13 @@ import { TravelTourListSimilar } from '../tour/list';
 import _mock from '../../../_mock';
 import { add } from 'date-fns';
 import { ITourProps } from 'src/types/tour';
-
-const test = {
+import axios from 'axios';
+import { useRouter } from 'next/router';
+var test = {
   id: '1',
-  name: 'Bale Mountains National Park',
+  name: 'Arba minch National Park',
   description: [
-    'Bale Mountains National Park is a natural wonder in the Oromia region, known for its stunning landscapes and diverse wildlife.',
+    'Arbaminch National Park is a natural wonder in the Oromia region, known for its stunning landscapes and diverse wildlife.',
   ],
   location: {
     latitude: '6.8754',
@@ -48,11 +49,23 @@ const test = {
   ],
   images: [
     {
-      url: '/assets/images/travel/travel_post_01.jpg',
+      url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/03/45/ac/photo0jpg.jpg?w=700&h=500&s=1',
       caption: 'Bale Mountains National Park - Scenic View',
     },
     {
-      url: '/assets/images/travel/travel_post_02.jpg',
+      url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/44/3e/6b/haile-resort-arba-minch.jpg?w=500&h=-1&s=1',
+      caption: 'Ethiopian Wolf in the Park',
+    },
+    {
+      url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/91/97/8e/paradise-lodge.jpg?w=500&h=400&s=1',
+      caption: 'Ethiopian Wolf in the Park',
+    },
+    {
+      url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/24/45/d3/whats-nature-looks-like.jpg?w=500&h=-1&s=1',
+      caption: 'Ethiopian Wolf in the Park',
+    },
+    {
+      url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/e8/17/8e/portugese-bridge.jpg?w=500&h=400&s=1',
       caption: 'Ethiopian Wolf in the Park',
     },
   ],
@@ -104,6 +117,8 @@ const test = {
 };
 
 export const _tours_: ITourProps[] = [0, 1, 2, 3].map((_, index) => ({
+
+  
   id: test.id,
   coverImg: '/assets/images/travel/travel_post_hero.jpg',
   heroImg: [
@@ -151,10 +166,24 @@ export const _tours_: ITourProps[] = [0, 1, 2, 3].map((_, index) => ({
   shareLinks: _mock.shareLinks,
 }));
 
-const _mockTour = _tours_[0];
+
 
 export default function TravelTourView() {
   const [loading, setLoading] = useState(true);
+  const [tourist, setTourist] = useState<any>([]);
+  const router = useRouter();
+
+  const { id } = router.query;
+  useEffect(() => {
+      const fetchTourist = async () => {
+        const { data } = await axios.get(`https://tourai.onrender.com/api/v1/tour_places/${id}`);
+        setTourist(data);
+      };
+      fetchTourist();
+  })
+
+  test = tourist;
+  const _mockTour = _tours_[0];
 
   useEffect(() => {
     const fakeLoading = async () => {

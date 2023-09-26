@@ -16,7 +16,7 @@ const CARDS = [
   },
   {
     icon: ' /assets/icons/home/ic_design.svg',
-    title: 'Personalized Travel Experiences44',
+    title: 'Personalized Travel Experiences',
     description:
       'Tour AI is all about making your travel experiences truly your own. We understand that no two travelers are alike, and that\'s why we\'re here. Our AI-powered platform crafts personalized recommendations that match your unique interests',
   },

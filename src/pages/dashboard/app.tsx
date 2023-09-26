@@ -30,7 +30,7 @@ import { useSettingsContext } from '../../components/settings';
 import { SeoIllustration } from '../../assets/illustrations';
 import { TravelTourList } from 'src/sections/_travel/tour/list';
 import Chip from '@mui/material/Chip';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
@@ -40,6 +40,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import axios from 'axios';
 
 // ----------------------------------------------------------------------
 
@@ -164,7 +165,18 @@ export default function GeneralAppPage() {
       tags[key] ? setQuery([...query, key]) : null;
     });
     console.log(query);
+    
+
   };
+  const [tourists, setTour] = useState([]);
+  useEffect(() => {
+    const fetchTours = async () => {
+      const tourists = await axios.get("https://tourai.onrender.com/api/v1/tour_places")
+      console.log(tourists.data)
+      setTour(tourists.data)
+    }
+    fetchTours()
+  } , [query])
 
   return (
     <>
@@ -175,7 +187,7 @@ export default function GeneralAppPage() {
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
-            <TravelTourList tours={_tours} loading={false} />
+            <TravelTourList tours={_tours} tourists={tourists} loading={false} />
           </Grid>
           <Grid item xs={12} md={4} spacing={3}>
             <Accordion>
@@ -300,7 +312,7 @@ export default function GeneralAppPage() {
                 '& > :not(style)': { m: 1, width: '40ch' },
               }}
             >
-              <Button variant="soft" color="primary" endIcon={<KeyboardArrowRight />}>
+              <Button variant="soft" color="primary" endIcon={<KeyboardArrowRight />} onClick={handleSubmit}>
                 Generate preferences
               </Button>
             </Box>

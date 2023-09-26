@@ -10,9 +10,10 @@ import { TravelTourItem, TravelTourItemSkeleton } from '../item';
 type Props = {
   tours: ITourProps[];
   loading?: boolean;
+  tourists?: any;
 };
 
-export default function TravelTourList({ tours, loading }: Props) {
+export default function TravelTourList({ tours, loading, tourists }: Props) {
   return (
     <>
       <Box
@@ -27,7 +28,7 @@ export default function TravelTourList({ tours, loading }: Props) {
           },
         }}
       >
-        {(loading ? [...Array(12)] : tours).map((tour, index) =>
+        {(loading ? [...Array(12)] : tourists).map((tour: any, index: number) =>
           tour ? (
             <TravelTourItem key={tour.id} tour={tour} />
           ) : (
