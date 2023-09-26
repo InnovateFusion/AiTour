@@ -81,7 +81,7 @@ function Description() {
             mb: { md: 5 },
           }}
         >
-          Landing Page Template?
+          Ready for a smarter, more personalized travel experience?
         </Typography>
       </m.div>
 
@@ -105,11 +105,11 @@ const VisitButton = (
     color="inherit"
     size="large"
     variant="outlined"
-    target="_blank"
+    
     rel="noopener"
     href={PATH_ZONE_ON_STORE}
     endIcon={<Iconify icon="ic:round-arrow-right-alt" />}
   >
-    Visit Zone Landing Page
+    Get started
   </Button>
 );

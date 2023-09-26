@@ -14,14 +14,10 @@ import {
 } from '../../../redux/slices/chat';
 import { PATH_DASHBOARD } from '../../../routes/paths';
 import { useSettingsContext } from '../../../components/settings';
-import CustomBreadcrumbs from '../../../components/custom-breadcrumbs';
-import { IChatParticipant, IChatSendMessage } from '../../../@types/chat';
-import ChatNav from './nav/ChatNav';
-import ChatRoom from './room/ChatRoom';
+
 import ChatMessageInput from './message/ChatMessageInput';
 import ChatMessageList from './message/ChatMessageList';
-import ChatHeaderDetail from './header/ChatHeaderDetail';
-import ChatHeaderCompose from './header/ChatHeaderCompose';
+
 
 interface Keyinterface{
   key: string

@@ -106,7 +106,7 @@ export const PATH_DOCS = {
   changelog: 'https://docs.minimals.cc/changelog',
 };
 
-export const PATH_ZONE_ON_STORE = 'https://mui.com/store/items/zone-landing-page/';
+export const PATH_ZONE_ON_STORE = '/dashboard';
 
 export const PATH_MINIMAL_ON_STORE = 'https://mui.com/store/items/minimal-dashboard/';
 

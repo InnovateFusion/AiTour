@@ -25,7 +25,7 @@ const CONTINENTS = [
 
 export const tourName = [
   'Italian Delights - 12 Days',
-  'Best of Sicily - 8 Days (Small Group Tour)',
+  'Unlock Unforgettable Journeys with AI',
   'Gourmet Journey of Emilia Romagna - 7 Days',
   'Adventure in Iceland',
   'Fire and Ice (6 Days)',

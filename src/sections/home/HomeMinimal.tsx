@@ -11,19 +11,19 @@ import { MotionViewport, varFade } from '../../components/animate';
 const CARDS = [
   {
     icon: ' /assets/icons/home/ic_make_brand.svg',
-    title: 'Branding',
-    description: 'Consistent design makes it easy to brand your own.',
+    title: 'Breaking Language Barriers',
+    description: 'Don\'t let language barriers hinder your exploration. Tour AI bridges the gap with instant translation and communication tools. Say goodbye to misunderstandings and hello to effortless communication with locals',
   },
   {
     icon: ' /assets/icons/home/ic_design.svg',
-    title: 'Promotion',
+    title: 'Personalized Travel Experiences44',
     description:
-      'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
+      'Tour AI is all about making your travel experiences truly your own. We understand that no two travelers are alike, and that\'s why we\'re here. Our AI-powered platform crafts personalized recommendations that match your unique interests',
   },
   {
     icon: ' /assets/icons/home/ic_development.svg',
-    title: 'Development',
-    description: 'Easy to customize and extend, saving you time and money.',
+    title: 'Discovering Hidden Gems',
+    description: 'Tour AI takes you off the beaten path. Explore the hidden gems that often go unnoticed by the average traveler. Our platform reveals the beauty of lesser-known destinations and supports local businesses, creating a more enriching and sustainable travel experience.',
   },
 ];
 

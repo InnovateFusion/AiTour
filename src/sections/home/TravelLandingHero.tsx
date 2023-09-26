@@ -137,8 +137,8 @@ type CarouselItemProps = {
 
 const homefact = [
   {
-    slug: 'Oromia Tourism Week',
-    location: 'Oromia',
+    slug: 'Unlock Unforgettable Journeys with AI',
+    location: 'Tour Guidance',
     heroImg: '/assets/images/travel/travel_post_hero.jpg',
     ratings: '',
     price: '',
@@ -146,16 +146,16 @@ const homefact = [
     continent:'',
   },
   {
-    slug: 'Oromia Tourism Week',
-    location: 'Oromia',
+    slug: 'Your AI Travel Companion: Explore the World with Confidence',
+    location: 'Confident Exploration',
     heroImg: '/assets/images/travel/travel_post_hero.jpg',
     ratings: '',
     price: '',
     duration: '',
   },
   {
-    slug: 'Oromia Tourism Week',
-    location: 'Oromia',
+    slug: 'Elevate Your Adventures with AI-Powered Tour Guidance',
+    location: 'Adventure Elevation3',
     heroImg: '/assets/images/travel/travel_post_hero.jpg',
     ratings: '',
     price: '',
